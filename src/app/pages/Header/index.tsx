@@ -42,7 +42,7 @@ export default function Header() {
       </nav>
 
       {/* Mobile Menu Button */}
-      <div className="mobile absolute top-4 right-4">
+      <div className="md:hidden mobile absolute top-4 right-4">
         <button
           aria-label="Toggle menu"
           onClick={() => setIsOpen(!isOpen)}
@@ -54,7 +54,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="fixed inset-x-0 top-10 z-50 bg-white shadow-md">
+        <div className="md:hidden fixed inset-x-0 top-10 z-50 bg-white shadow-md">
           <ul className="flex flex-col items-center gap-6 pb-8 font-[Poppins] text-[1.063rem] font-medium">
             {navData.map((data) => (
               <li
