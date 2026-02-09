@@ -1,6 +1,4 @@
 
-
-
 type Props = {
   linkData: any[];
   ellipse: string;
