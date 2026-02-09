@@ -1,4 +1,4 @@
-import Head from "./pages/Header";
+
 
 
 type Props = {
@@ -12,8 +12,7 @@ const page = ({ linkData, ellipse, group, style }: Props) => {
   return (
    <main>
   <div className="flex">
-  <Head/>
-
+ 
   </div>
    </main>
   )
