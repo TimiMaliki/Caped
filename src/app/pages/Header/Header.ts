@@ -3,6 +3,7 @@
 
 interface brandName {
     name : string;
+    // image: StaticImageData;
 }
 
 interface navData {

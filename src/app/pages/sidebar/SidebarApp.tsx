@@ -7,7 +7,8 @@ import  accessories from "../../../assets/mainLayout-imagies/access.png"
 import  active from "../../../assets/mainLayout-imagies/active.png"
 import  gift from "../../../assets/mainLayout-imagies/gift.png"
 import  inspire from "../../../assets/mainLayout-imagies/inspire.png"
-import { brandName } from "../../pages/Header/Header";
+import  Eclipse from "../../../assets/mainLayout-imagies/Ellipse.png";
+import { brandName} from "../../pages/Header/Header";
 
 import {sideMenu} from "../Header/Header"
 import {
@@ -78,14 +79,28 @@ const SidebarApp = (props: Props) => {
         z-50
       "
     >
-      <SidebarHeader className="p-6 font-bold text-xl bg-white">
-        {brandName}
+      <SidebarHeader className="p-6 font-bold text-xl bg-white relative">
+        <div className="flex cursor-pointer ml-8 items-center">
+  <img
+   src={Eclipse.src}
+    alt=""
+    className="w-17.5 h-17.5"
+  />
+
+  <div className=" absolute top-10 left-25">
+    <div className="grid">
+      <div className="w-3 h-0.5 bg-black ml-[1.4rem]" />
+   <span className="text-2xl font-Poppins font-extrabold">{brandName}</span>
+    </div>
+  </div>
+</div>
+        
       </SidebarHeader>
 
       <SidebarContent className="bg-white">
         <SidebarMenu>
           {sidebarmenu.map((menu) => (
-            <SidebarMenuItem key={menu.title} className="px-4 py-2">
+            <SidebarMenuItem key={menu.title} className="px-4 py-6">
               <SidebarMenuButton asChild>
                 <a className="flex items-center gap-3" href="#">
                   <Image
