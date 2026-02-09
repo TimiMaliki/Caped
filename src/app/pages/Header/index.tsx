@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { navData } from "../../pages/Header/Header";
+import { brandName,navData } from "../../pages/Header/Header";
 import { ShoppingBasket, User, Search, Menu, X } from "lucide-react";
+import  SidebarApp from "../sidebar/SidebarApp"
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +13,7 @@ export default function Header() {
   return (
     <header className="w-full">
       <nav className="flex items-center justify-between px-8 py-6">
+         <SidebarApp/>
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-12 font-[Poppins] text-[1.063rem] font-medium">
           {navData.map((data) => (
@@ -54,7 +57,10 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden fixed inset-x-0 top-10 z-50 bg-white shadow-md">
+      <header className="w-full">
+         <nav className="flex items-center justify-between px-8 py-6">
+         <SidebarApp/>
+         <div className="md:hidden fixed inset-x-0 top-10 z-50 bg-white shadow-md">
           <ul className="flex flex-col items-center gap-6 pb-8 font-[Poppins] text-[1.063rem] font-medium">
             {navData.map((data) => (
               <li
@@ -64,7 +70,7 @@ export default function Header() {
                 {data.title}
               </li>
             ))}
-
+                
             <div className="flex gap-6 items-center">
               <ShoppingBasket className="w-5 h-5" />
               <Link href="/login">
@@ -80,8 +86,11 @@ export default function Header() {
                 className="w-[16rem] h-[2.813rem] border-b border-black bg-transparent outline-none"
               />
             </div>
+             
           </ul>
         </div>
+       </nav>
+      </header>
       )}
     </header>
   );

@@ -1,9 +1,26 @@
+ import { StaticImageData } from "next/image";
+
+
+interface brandName {
+    name : string;
+}
 
 interface navData {
     title : string;
     link : string;
 }
 
+
+  
+ interface sideMenu {
+    icons : StaticImageData;
+    url : string;
+    title : string;
+  }
+
+
+
+const brandName = "caped"
 
 const navData = [
   { title: "products", link: "/" },
@@ -12,4 +29,4 @@ const navData = [
   { title: "packaging", link: "/privacy" },
 ]
 
-export { navData }
+export { brandName, navData , sideMenu }
