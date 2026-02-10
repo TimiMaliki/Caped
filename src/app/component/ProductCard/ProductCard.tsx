@@ -1,10 +1,14 @@
-import React from 'react'
+import { productCardDetail } from "../ProductType/ProductType"
 
-type Props = {}
+type Props = {
+  productCardDetails : productCardDetail
+}
 
-const ProductCard = (props: Props) => {
+const ProductCard = (productCardDetails: Props) => {
   return (
-    <div>ProductCard</div>
+    <div>
+
+    </div>
   )
 }
 

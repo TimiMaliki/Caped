@@ -1,74 +1,68 @@
 "use client";
 import Image from "next/image";
-import  star from "../../../assets/mainLayout-imagies/star.png"
-import  cloth from "../../../assets/mainLayout-imagies/cloth.png"
-import  shoe from "../../../assets/mainLayout-imagies/shoe.png"
-import  accessories from "../../../assets/mainLayout-imagies/access.png"
-import  active from "../../../assets/mainLayout-imagies/active.png"
-import  gift from "../../../assets/mainLayout-imagies/gift.png"
-import  inspire from "../../../assets/mainLayout-imagies/inspire.png"
-import  Eclipse from "../../../assets/mainLayout-imagies/Ellipse.png";
-import { brandName} from "../../pages/Header/Header";
+import star from "../../../assets/mainLayout-imagies/star.png";
+import cloth from "../../../assets/mainLayout-imagies/cloth.png";
+import shoe from "../../../assets/mainLayout-imagies/shoe.png";
+import accessories from "../../../assets/mainLayout-imagies/access.png";
+import active from "../../../assets/mainLayout-imagies/active.png";
+import gift from "../../../assets/mainLayout-imagies/gift.png";
+import inspire from "../../../assets/mainLayout-imagies/inspire.png";
+import Eclipse from "../../../assets/mainLayout-imagies/Ellipse.png";
+import { brandName } from "../../pages/Header/Header";
 
-import {sideMenu} from "../Header/Header"
+import { sideMenu } from "../Header/Header";
 import {
   Sidebar,
   SidebarContent,
   SidebarMenu,
   SidebarMenuItem,
   SidebarHeader,
-  SidebarFooter ,
+  SidebarFooter,
   SidebarMenuButton,
-} from "@/components/ui/sidebar"
- 
-
-
+} from "@/components/ui/sidebar";
 
 const sidebarmenu: Array<sideMenu> = [
   {
-  icons: star,
-  title: "New In",
-  url: "/new-in",
-},
-{
-  icons: cloth,
-  title: "Clothing",
-  url: "/clothing",
-},
-{
-  icons: shoe,
-  title: "Shoes",
-  url: "/shoes",
-},
-{
-  icons:accessories,
-  title: "Accessories",
-  url: "/accessories",
-},
-{
-  icons: active,
-  title: "Activewears",
-  url: "/activewears",
-},
-{
-  icons: gift,
-  title: "Gifts & Living",
-  url: "/gifts-living",
-},
-{
-  icons: inspire,
-  title: "Inspiration",
-  url: "/inspiration",
-},
-
+    icons: star,
+    title: "New In",
+    url: "/new-in",
+  },
+  {
+    icons: cloth,
+    title: "Clothing",
+    url: "/clothing",
+  },
+  {
+    icons: shoe,
+    title: "Shoes",
+    url: "/shoes",
+  },
+  {
+    icons: accessories,
+    title: "Accessories",
+    url: "/accessories",
+  },
+  {
+    icons: active,
+    title: "Activewears",
+    url: "/activewears",
+  },
+  {
+    icons: gift,
+    title: "Gifts & Living",
+    url: "/gifts-living",
+  },
+  {
+    icons: inspire,
+    title: "Inspiration",
+    url: "/inspiration",
+  },
 ];
-type Props = {
-  
-}
+type Props = {};
 
 const SidebarApp = (props: Props) => {
   return (
-  <Sidebar
+    <Sidebar
       className="
         text-black
         fixed
@@ -78,23 +72,21 @@ const SidebarApp = (props: Props) => {
         w-72
         z-50
       "
+      variant="floating"
     >
       <SidebarHeader className="p-6 font-bold text-xl bg-white relative">
         <div className="flex cursor-pointer ml-8 items-center">
-  <img
-   src={Eclipse.src}
-    alt=""
-    className="w-17.5 h-17.5"
-  />
+          <img src={Eclipse.src} alt="" className="w-17.5 h-17.5" />
 
-  <div className=" absolute top-10 left-25">
-    <div className="grid">
-      <div className="w-3 h-0.5 bg-black ml-[1.4rem]" />
-   <span className="text-2xl font-Poppins font-extrabold">{brandName}</span>
-    </div>
-  </div>
-</div>
-        
+          <div className=" absolute top-10 left-25">
+            <div className="grid">
+              <div className="w-3 h-0.5 bg-black ml-[1.4rem]" />
+              <span className="text-2xl font-Poppins font-extrabold">
+                {brandName}
+              </span>
+            </div>
+          </div>
+        </div>
       </SidebarHeader>
 
       <SidebarContent className="bg-white">
@@ -109,9 +101,7 @@ const SidebarApp = (props: Props) => {
                     width={20}
                     height={20}
                   />
-                  <span className="text-sm font-medium">
-                    {menu.title}
-                  </span>
+                  <span className="text-sm font-medium">{menu.title}</span>
                 </a>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -123,8 +113,7 @@ const SidebarApp = (props: Props) => {
         © 2026
       </SidebarFooter>
     </Sidebar>
-  )
-}
+  );
+};
 
-export default SidebarApp
- 
+export default SidebarApp;
