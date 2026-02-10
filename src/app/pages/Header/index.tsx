@@ -6,12 +6,13 @@ import { navData } from "../../pages/Header/Header";
 import { ShoppingBasket, User, Search, Menu, X } from "lucide-react";
 import SidebarApp from "../sidebar/SidebarApp";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import Category from "@/app/modules/category/Category";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full fixed">
+     <header className="w-full fixed">
       <nav className="flex items-center justify-between px-8 py-6">
         <SidebarApp />
         {/* Desktop Nav */}
