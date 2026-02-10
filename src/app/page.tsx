@@ -9,9 +9,7 @@ type Props = {
 const page = ({ linkData, ellipse, group, style }: Props) => {
   return (
    <main>
-  <div className="flex">
- 
-  </div>
+
    </main>
   )
 }

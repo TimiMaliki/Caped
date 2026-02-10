@@ -11,7 +11,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full">
+    <header className="w-full fixed">
       <nav className="flex items-center justify-between px-8 py-6">
         <SidebarApp />
         {/* Desktop Nav */}

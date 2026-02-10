@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Header from "./pages/Header";
 import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
-// import SidebarApp from "./pages/sidebar/SidebarApp";
+import Category from "./modules/category/Category";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,12 +30,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SidebarProvider>
-          {/* <SidebarApp/> */}
+     <div>
+         <SidebarProvider>
           <Header />
           {children}
-        </SidebarProvider>
+        </SidebarProvider> 
+     </div>
+
+     <div className="cat">
+      <Category/>
+     </div>
       </body>
+
+      
     </html>
   );
 }
