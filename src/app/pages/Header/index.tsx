@@ -6,7 +6,7 @@ import { navData } from "../../pages/Header/Header";
 import { ShoppingBasket, User, Search, Menu, X } from "lucide-react";
 import SidebarApp from "../sidebar/SidebarApp";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import Category from "@/app/modules/category/Category";
+
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
