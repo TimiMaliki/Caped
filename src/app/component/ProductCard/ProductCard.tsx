@@ -19,12 +19,11 @@ type Props = {
 
 const ProductCard = ({productName, image, url, description, price}: Props) => {
   return (
-   <Card className="relative mx-auto w-full max-w-sm pt-0">
-      <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
+   <Card className="w-full max-w-sm pt-0 border border-red-900 rounded-lg shadow-md">
       <img
         src={image.src}
         alt={productName}
-        className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+        className="object-cover w-full object-center rounded-lg shadow-md pt-0"
       />
       <CardHeader>
         <CardAction>
@@ -35,7 +34,7 @@ const ProductCard = ({productName, image, url, description, price}: Props) => {
         </CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button className="w-full">View Event</Button>
+        <Button className="w-full cusor-pointer">View Event</Button>
       </CardFooter>
     </Card>
   )

@@ -20,6 +20,7 @@ import {
   SidebarFooter,
   SidebarMenuButton,
 } from "@/components/ui/sidebar";
+import Link from "next/link";
 
 const sidebarmenu: Array<sideMenu> = [
   {
@@ -30,7 +31,7 @@ const sidebarmenu: Array<sideMenu> = [
   {
     icons: cloth,
     title: "Clothing",
-    url: "/clothing",
+    url: "/Clothes",
   },
   {
     icons: shoe,
@@ -94,7 +95,8 @@ const SidebarApp = (props: Props) => {
           {sidebarmenu.map((menu) => (
             <SidebarMenuItem key={menu.title} className="px-4 py-6">
               <SidebarMenuButton asChild>
-                <a className="flex items-center gap-3" href="#">
+                <Link href={menu.url}>
+                <div className="flex items-center gap-3">
                   <Image
                     src={menu.icons}
                     alt={menu.title}
@@ -102,7 +104,8 @@ const SidebarApp = (props: Props) => {
                     height={20}
                   />
                   <span className="text-sm font-medium">{menu.title}</span>
-                </a>
+                </div>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}

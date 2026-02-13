@@ -28,7 +28,7 @@ export default function Header() {
 
           <li className="flex items-center gap-4">
             <ShoppingBasket className="w-5 h-5 cursor-pointer" />
-            <Link href="/login">
+            <Link href="/">
               <User className="w-5 h-5 cursor-pointer" />
             </Link>
           </li>
