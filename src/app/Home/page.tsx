@@ -16,7 +16,7 @@ const fadeUp = {
 
 export default function Home() {
   return (
-    <div className="overflow-hidden rounded-2xl">
+    <div className="w-full h-full rounded-2xl">
       {/* ================= HERO ================= */}
       <section className="relative min-h-screen bg-black text-white flex items-center justify-center rounded-2xl">
         <Image
@@ -161,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="py-28 bg-yellow-500 text-white">
+      <section className="py-28 bg-yellow-500 text-white mb-24">
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}

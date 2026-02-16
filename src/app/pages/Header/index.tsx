@@ -16,12 +16,14 @@ export default function Header() {
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-12 font-[Poppins] text-[1.063rem] font-medium">
           {navData.map((data) => (
+           <Link href={data.link}>
             <li
               key={data.title}
               className="cursor-pointer border-b-2 border-transparent transition hover:border-black"
             >
               {data.title}
             </li>
+           </Link>
           ))}
 
           <li className="flex items-center gap-4">
