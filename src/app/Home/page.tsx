@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Category from "../../app/Clothes/page";
 
-import heroImg from "../../assets/Hero-Home-Imagies/Hero-prada.jpeg";
+import heroImg from "../../assets/Hero-Home-Imagies/white-fashion-girl.jpeg";
 import shoeImg from "../../assets/Hero-Home-Imagies/Hero-prada.jpeg";
 import accessoriesImg from "../../assets/Hero-Home-Imagies/Hero-prada.jpeg";
 
@@ -24,7 +24,7 @@ export default function Home() {
           alt="Caped fashion"
           fill
           priority
-          className="object-cover opacity-60 rounded-2xl"
+          className="object-cover  opacity-60 rounded-2xl"
         />
 
         <motion.div
@@ -76,7 +76,7 @@ export default function Home() {
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
-                className="relative h-[420px] rounded-2xl overflow-hidden cursor-pointer"
+                className="relative h-105 rounded-2xl overflow-hidden cursor-pointer"
               >
                 <Image
                   src={img}

@@ -44,10 +44,10 @@ export default function RootLayout({
                 {children}
               </main>
 
-              <div className="
+              {/* <div className="
               ">
                  <Home />
-              </div>
+              </div> */}
             </div>
           </div>
         </SidebarProvider>
