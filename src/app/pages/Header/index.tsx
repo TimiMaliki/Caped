@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { navData } from "../../pages/Header/Header";
 import { ShoppingBasket, User, Search, Menu, X } from "lucide-react";
-import SidebarApp from "../sidebar/SidebarApp";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
 
@@ -12,9 +11,8 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-     <header className="w-full fixed">
+     <header className="w-full bg-white/50 fixed">
       <nav className="flex items-center justify-between px-8 py-6">
-        <SidebarApp />
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-12 font-[Poppins] text-[1.063rem] font-medium">
           {navData.map((data) => (

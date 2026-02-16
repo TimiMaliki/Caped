@@ -1,14 +1,17 @@
-import React from 'react'
-import Category from '../modules/category/Category'
+import React from "react";
+import Category from "../modules/category/ClothesCategory";
 
-type Props = {}
+type Props = {};
 
 const Clothes = (props: Props) => {
   return (
-    <div className='mx-auto py-24'>
+    <section className="py-4 w-full ">
+      <div className="px-4 sm:px-6 lg:px-8">
         <Category />
-    </div>
-  )
-}
+        <Category />
+      </div>
+    </section>
+  );
+};
 
-export default Clothes
+export default Clothes;

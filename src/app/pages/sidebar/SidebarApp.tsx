@@ -65,15 +65,18 @@ const SidebarApp = (props: Props) => {
   return (
     <Sidebar
       className="
-        text-black
-        fixed
-        top-0
-        left-0
-        h-screen
-        w-72
-        z-50
-      "
-      variant="floating"
+    text-black
+    fixed
+    top-0
+    left-0
+    h-screen
+    w-72
+    z-50
+    bg-white
+    hidden
+    lg:block
+  "
+  variant="floating"
     >
       <SidebarHeader className="p-6 font-bold text-xl bg-white relative">
         <div className="flex cursor-pointer ml-8 items-center">

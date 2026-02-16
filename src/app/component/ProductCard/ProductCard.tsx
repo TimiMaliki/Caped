@@ -19,24 +19,29 @@ type Props = {
 
 const ProductCard = ({productName, image, url, description, price}: Props) => {
   return (
-   <Card className="w-full max-w-sm pt-0 border border-red-900 rounded-lg shadow-md">
-      <img
-        src={image.src}
-        alt={productName}
-        className="object-cover w-full object-center rounded-lg shadow-md pt-0"
-      />
-      <CardHeader>
-        <CardAction>
-        </CardAction>
-        <CardTitle>{productName}</CardTitle>
-        <CardDescription>
-        {description}
-        </CardDescription>
-      </CardHeader>
-      <CardFooter>
-        <Button className="w-full cusor-pointer">View Event</Button>
-      </CardFooter>
-    </Card>
+<Card className="w-full rounded-xl border shadow-sm transition hover:shadow-md mb-10">
+
+  {/* Image wrapper */}
+ <div className="w-full h-[180px] sm:h-[200px] md:h-56 overflow-hidden">
+  <img
+    src={image.src}
+    alt={productName}
+    className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+  />
+</div>
+
+  <CardHeader className="pb-2">
+    <CardTitle>{productName}</CardTitle>
+    <CardDescription>{description}</CardDescription>
+  </CardHeader>
+
+  <CardFooter>
+    <Button className="w-full cursor-pointer">
+      View Product
+    </Button>
+  </CardFooter>
+</Card>
+
   )
 }
 

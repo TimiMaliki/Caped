@@ -6,20 +6,19 @@ type Props = {};
 
 const Category = (props: Props) => {
   return (
-    <div
-      className="
-        grid
-        grid-cols-4
-        md:grid-cols-4
-        gap-4
-        mt-12
-        ml-[8.2rem]
-        lg:ml-[12rem]
-        px-[0.625rem]
-        sm:px-10
-        lg:px-[4.375rem]
-      "
-    >
+<div
+  className="
+    w-full
+    grid
+    grid-cols-2
+    gap-4
+    sm:gap-5
+    md:grid-cols-3
+    md:gap-6
+    lg:grid-cols-4
+    justify-items-center
+  "
+>
       <ProductCard
         productName="Blondie"
         image={blondie}
