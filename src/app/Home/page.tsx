@@ -16,15 +16,15 @@ const fadeUp = {
 
 export default function Home() {
   return (
-    <div className="w-full h-full rounded-2xl">
+    <div className="w-full h-full rounded-2xl -mt-32 md:-mt-0">
       {/* ================= HERO ================= */}
-      <section className="relative min-h-screen bg-black text-white flex items-center justify-center rounded-2xl">
+      <section className="relative min-h-screen bg-white text-black flex items-center justify-center rounded-2xl">
         <Image
           src={heroImg}
           alt="Caped fashion"
           fill
           priority
-          className="object-cover  opacity-60 rounded-2xl"
+          className="object-contain  opacity-60 rounded-2xl"
         />
 
         <motion.div
@@ -35,23 +35,23 @@ export default function Home() {
           className="relative z-10 text-center px-6 max-w-3xl"
         >
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight">
-            Designed for the <span className="text-white/70">Fearless</span>
+            Designed for the <span className="text-black/70">Fearless</span>
           </h1>
 
-          <p className="mt-6 text-sm sm:text-base text-white/80">
+          <p className="mt-6 text-sm sm:text-base text-black/80">
             Premium fashion crafted to empower confidence, individuality, and
             bold self-expression.
           </p>
 
           <div className="mt-10 flex justify-center gap-4">
             <Link href="/clothes">
-              <button className="px-8 py-3 bg-yellow-500 cursor-pointer text-black font-semibold rounded-full hover:scale-105 transition">
+              <button className="px-4 md:px-8 py-2 md:py-3 bg-yellow-500 cursor-pointer text-black font-semibold rounded-full hover:scale-105 transition">
                 Shop Now
               </button>
             </Link>
 
             <Link href="/story">
-              <button className="px-8 py-3 border border-white/40 rounded-full cursor-pointer hover:bg-white hover:text-black transition">
+              <button className="px-8 py-3 border border-white/40 rounded-full cursor-pointer hover:bg-black hover:text-white transition">
                 Our Story
               </button>
             </Link>

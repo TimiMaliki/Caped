@@ -11,7 +11,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-     <header className="w-full bg-white/50 fixed">
+     <header className="w-full bg-white/50 fixed top-0  z-50 backdrop-blur-sm">
       <nav className="flex items-center justify-between px-8 py-6">
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-12 font-[Poppins] text-[1.063rem] font-medium">
