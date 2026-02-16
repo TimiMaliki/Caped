@@ -26,7 +26,7 @@ const sidebarmenu: Array<sideMenu> = [
   {
     icons: star,
     title: "New In",
-    url: "/new-in",
+    url: "/new",
   },
   {
     icons: cloth,
@@ -36,7 +36,7 @@ const sidebarmenu: Array<sideMenu> = [
   {
     icons: shoe,
     title: "Shoes",
-    url: "/shoes",
+    url: "/Shoes",
   },
   {
     icons: accessories,

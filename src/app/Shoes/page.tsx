@@ -1,4 +1,4 @@
-import Category from "../modules/category/ClothesCategory";
+import ShoesCategory from "../modules/category/ShoesCategory";
 
 type Props = {};
 
@@ -6,8 +6,8 @@ const Clothes = (props: Props) => {
   return (
     <section className="py-4 w-full ">
       <div className="px-4 sm:px-6 lg:px-8">
-        <Category />
-        <Category />
+        <ShoesCategory />
+        <ShoesCategory />
       </div>
     </section>
   );

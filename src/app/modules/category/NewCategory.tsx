@@ -4,7 +4,7 @@ import ProductCard from "@/app/component/ProductCard/ProductCard";
 
 type Props = {};
 
-const ClothesCategory = (props: Props) => {
+const NewInCategory = (props: Props) => {
   return (
 <div
   className="
@@ -20,10 +20,10 @@ const ClothesCategory = (props: Props) => {
   "
 >
       <ProductCard
-        productName="Clothes"
+        productName="New Pam Bondi"
         image={blondie}
         url="#"
-        description="A beautiful blonde hair product"
+        description="A beautiful hoodies"
         price={29.99}
       />
       <ProductCard
@@ -51,4 +51,4 @@ const ClothesCategory = (props: Props) => {
   );
 };
 
-export default ClothesCategory;
+export default NewInCategory;
