@@ -51,7 +51,7 @@ const sidebarmenu: Array<sideMenu> = [
   {
     icons: gift,
     title: "Gifts & Living",
-    url: "/gifts-living",
+    url: "/gifts",
   },
   {
     icons: inspire,
