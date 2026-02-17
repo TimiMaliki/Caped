@@ -6,8 +6,9 @@ import Link from "next/link";
 import Category from "../../app/Clothes/page";
 
 import heroImg from "../../assets/Hero-Home-Imagies/white-fashion-girl.jpeg";
-import shoeImg from "../../assets/Hero-Home-Imagies/Hero-prada.jpeg";
-import accessoriesImg from "../../assets/Hero-Home-Imagies/Hero-prada.jpeg";
+import MenImg from "../../assets/Hero-Home-Imagies/vacation-fashion.jpeg";
+import WomenImg from "../../assets/Hero-Home-Imagies/black-fashion-girl.jpeg";
+import KidsImg from "../../assets/Hero-Home-Imagies/kid-fashion-sketch.jpeg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -16,7 +17,7 @@ const fadeUp = {
 
 export default function Home() {
   return (
-    <div className="w-full h-full rounded-2xl -mt-32 md:-mt-0">
+    <div className="w-full h-full rounded-2xl -mt-32 md:mt-0">
       {/* ================= HERO ================= */}
       <section className="relative min-h-screen bg-white text-black flex items-center justify-center rounded-2xl">
         <Image
@@ -72,7 +73,7 @@ export default function Home() {
           </motion.h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            {[shoeImg, heroImg, accessoriesImg].map((img, i) => (
+            {[MenImg, WomenImg, KidsImg].map((img, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
@@ -82,11 +83,11 @@ export default function Home() {
                   src={img}
                   alt="Category"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
-                <div className="absolute inset-0 bg-black/30 flex items-end p-6">
-                  <h3 className="text-white text-xl font-bold uppercase">
-                    {i === 0 ? "Shoes" : i === 1 ? "Clothing" : "Accessories"}
+                <div className="absolute inset-0 bg-white/10 flex items-end p-6">
+                  <h3 className="text-black text-xl font-bold uppercase">
+                    {i === 0 ? "Male" : i === 1 ? "Women" : "Kids"}
                   </h3>
                 </div>
               </motion.div>
