@@ -25,7 +25,7 @@ const brandName = "caped"
 
 const navData = [
   { title: "Home", link: "/Home" },
-  { title: "story", link: "/search" },
+  { title: "story", link: "/Story" },
   { title: "manufacturing", link: "/privacy" },
   { title: "packaging", link: "/privacy" },
 ]
