@@ -174,7 +174,7 @@ export default function Home() {
             Step Into Your Power
           </h2>
 
-          <Link href="/new-in">
+          <Link href="/new">
             <button className="mt-10 px-10 py-4 bg-white  cursor-pointer text-black rounded-full font-semibold hover:scale-105 transition">
               Discover New Arrivals
             </button>
