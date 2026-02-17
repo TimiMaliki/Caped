@@ -19,7 +19,7 @@ export default function StoryPage() {
           priority
           className="object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/60 to-black" />
 
         {/* Content */}
         <motion.div
@@ -59,7 +59,7 @@ export default function StoryPage() {
             </p>
           </div>
 
-          <div className="relative h-[680px] rounded-2xl overflow-hidden">
+          <div className="relative h-170 rounded-2xl overflow-hidden">
             <Image
               src={blackCar}
               alt="Caped origin"
