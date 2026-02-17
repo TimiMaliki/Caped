@@ -42,7 +42,7 @@ const ProductCard = ({
       </CardHeader>
 
       <CardFooter>
-        <Button className="w-full cursor-pointer bg-yellow-500">View Product</Button>
+        <Button className="w-full cursor-pointer bg-yellow-300">View Product</Button>
       </CardFooter>
     </Card>
   );

@@ -162,7 +162,7 @@ export default function Home() {
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="py-28 bg-yellow-500 text-white mb-24">
+      <section className="py-28 bg-yellow-300 text-white mb-24 rounded">
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
