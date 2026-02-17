@@ -2,42 +2,39 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import photo from "../../assets/Hero-Home-Imagies/billionaireFashion.jpeg";
-import blackCar from "../../assets/Hero-Home-Imagies/2026.jpeg";
+import photo from "../../assets/Hero-Home-Imagies/ny.jpeg";
 import { Button } from "@/components/ui/button";
 
-export default function StoryPage() {
+export default function ManufacturingPage() {
   return (
-    <main className="relative w-full overflow-hidden bg-black text-white mb-44">
+    <main className="relative w-full bg-black text-white overflow-hidden mb-44">
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center">
-        {/* Background */}
         <Image
           src={photo}
-          alt="Caped Story Background"
+          alt="Caped Manufacturing"
           fill
           priority
-          className="object-cover opacity-60"
+          className="object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/60 to-black" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/90 via-black/70 to-black" />
 
-        {/* Content */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="relative z-10 max-w-5xl px-6 text-center"
         >
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            This is not just clothing.
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
+            Crafted in New York.
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-white/80">
-            This is armor for the everyday grind.
+          <p className="mt-6 text-xl md:text-2xl text-white/80">
+            Built with precision. Worn like royalty.
           </p>
         </motion.div>
       </section>
 
-      {/* ORIGIN STORY */}
+      {/* MADE IN NY */}
       <section className="py-32 px-6 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -47,22 +44,24 @@ export default function StoryPage() {
           className="grid md:grid-cols-2 gap-16 items-center"
         >
           <div>
-            <h2 className="text-4xl font-bold mb-6">Where CAPED began</h2>
-            <p className="text-white/80 leading-relaxed text-lg">
-              CAPED was born from pressure — the kind you feel when the world
-              expects more from you every single day.
+            <h2 className="text-4xl font-bold mb-6">
+              Manufactured in New York
+            </h2>
+            <p className="text-lg leading-relaxed text-white/80">
+              CAPED is proudly designed and manufactured in New York —
+              where ambition is loud, standards are high, and excellence
+              is expected.
               <br /><br />
-              We saw people waking up early, pushing through doubt, building
-              dreams quietly while the world scrolled past them.
-              <br /><br />
-              CAPED exists for those people.
+              Every garment is crafted by skilled hands that understand
+              precision, durability, and detail. This isn’t mass production.
+              This is intentional creation.
             </p>
           </div>
 
-          <div className="relative h-170 rounded-2xl overflow-hidden">
+          <div className="relative h-170 rounded-2xl overflow-hidden border border-white/10">
             <Image
-              src={blackCar}
-              alt="Caped origin"
+              src={photo}
+              alt="New York manufacturing"
               fill
               className="object-cover"
             />
@@ -70,7 +69,7 @@ export default function StoryPage() {
         </motion.div>
       </section>
 
-      {/* PHILOSOPHY */}
+      {/* ROYAL QUALITY */}
       <section className="bg-white text-black py-32 px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
@@ -79,33 +78,36 @@ export default function StoryPage() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl font-bold mb-8">Our Philosophy</h2>
+          <h2 className="text-4xl font-bold mb-8">
+            Designed for Royalty
+          </h2>
           <p className="text-lg leading-relaxed text-black/80">
-            A cape doesn’t make you a hero.
+            Royalty isn’t about crowns.
             <br />
-            It reminds you that you already are one.
+            It’s about how you carry yourself.
             <br /><br />
-            Every stitch, every fabric choice, every silhouette is designed
-            to make you feel confident, protected, and unapologetically bold.
+            CAPED garments are built to make you feel powerful —
+            structured silhouettes, premium fabrics, and a fit
+            that commands respect the moment you walk in.
           </p>
         </motion.div>
       </section>
 
-      {/* VALUES */}
+      {/* PROCESS */}
       <section className="py-32 px-6 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-12">
           {[
             {
-              title: "Built with Purpose",
-              text: "We don’t chase trends. We design timeless pieces that feel powerful today and five years from now.",
+              title: "Premium Materials",
+              text: "We source high-grade fabrics chosen for comfort, durability, and timeless appeal.",
             },
             {
-              title: "Designed for Movement",
-              text: "CAPED is made for real life — long days, late nights, and everything in between.",
+              title: "Precision Craftsmanship",
+              text: "Each piece goes through strict quality control — cut, stitched, and finished with intent.",
             },
             {
-              title: "Confidence is the Fit",
-              text: "If it doesn’t make you stand taller, it doesn’t make the cut.",
+              title: "Built to Last",
+              text: "CAPED is not fast fashion. It’s fashion with authority.",
             },
           ].map((item, i) => (
             <motion.div
@@ -114,7 +116,7 @@ export default function StoryPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.2 }}
               viewport={{ once: true }}
-              className="border border-white/10 rounded-2xl p-8"
+              className="border border-white/10 rounded-2xl p-8 bg-black/40"
             >
               <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
               <p className="text-white/70">{item.text}</p>
@@ -123,23 +125,24 @@ export default function StoryPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* STATEMENT */}
       <section className="relative py-40 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto"
+          className="max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Wear your mindset.
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+            Power is in the details.
           </h2>
           <p className="text-white/80 text-lg mb-10">
-            CAPED is more than a brand — it’s a reminder of who you are becoming.
+            From New York to the world — CAPED delivers fashion
+            that feels authoritative, elevated, and undeniably royal.
           </p>
-          <Button className="px-10 py-6 text-lg rounded-full">
-            Shop CAPED
+          <Button className="px-12 py-6 text-lg rounded-full">
+            Experience CAPED
           </Button>
         </motion.div>
       </section>
