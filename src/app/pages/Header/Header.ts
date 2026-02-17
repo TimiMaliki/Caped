@@ -27,7 +27,7 @@ const navData = [
   { title: "Home", link: "/Home" },
   { title: "story", link: "/Story" },
   { title: "manufacturing", link: "/Manufacture" },
-  { title: "packaging", link: "/privacy" },
+  { title: "packaging", link: "/Packaging" },
 ]
 
 export { brandName, navData , sideMenu }
