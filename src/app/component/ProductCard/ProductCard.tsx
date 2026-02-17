@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { StaticImageData } from "next/image";
+import Image from "next/image";
 import {
   Card,
   CardAction,
@@ -28,10 +29,10 @@ const ProductCard = ({
     <Card className="w-full rounded-xl border shadow-sm transition hover:shadow-md mb-10">
       {/* Image wrapper */}
       <div className="w-full h-45 sm:h-50 md:h-56 overflow-hidden">
-        <img
-          src={image.src}
+        <Image
+          src={image}
           alt={productName}
-          className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+          className="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
         />
       </div>
 

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import Category from "../../app/Clothes/page";
+import BestSellerComponent from "../component/BestSeller/BestSells";
 
 import heroImg from "../../assets/Hero-Home-Imagies/white-fashion-girl.jpeg";
 import MenImg from "../../assets/Hero-Home-Imagies/vacation-fashion.jpeg";
@@ -110,7 +110,7 @@ export default function Home() {
             Best Sellers
           </motion.h2>
 
-          <Category />
+          <BestSellerComponent />
         </div>
       </section>
 
