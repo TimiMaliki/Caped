@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import packageImg from "../../assets/Hero-Home-Imagies/ny.jpeg";
+import packageImg from "../../assets/Hero-Home-Imagies/package.jpeg";
 
 const steps = [
   {
@@ -48,7 +48,7 @@ export default function PackagingPage() {
           alt="Caped Packaging"
           fill
           priority
-          className="object-cover opacity-40"
+          className="object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-linear-to-b from-black/90 via-black/70 to-black" />
 
