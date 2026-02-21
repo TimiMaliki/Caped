@@ -4,6 +4,8 @@ import ProductCard from "@/app/component/ProductCard/ProductCard";
 
 type Props = {};
 
+
+
 const NewInCategory = (props: Props) => {
   return (
 <div
