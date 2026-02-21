@@ -10,18 +10,7 @@ type Props = {};
 
 const BestSellerComponent = (props: Props) => {
   return (
-<div
-  className="
-    w-full
-    grid
-    grid-cols-2
-    gap-4
-    sm:gap-5
-    md:grid-cols-3
-    md:gap-6
-    lg:grid-cols-4
-    justify-items-center
-  "
+<div className="w-full grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 md:gap-6 lg:grid-cols-4"
 >
       <ProductCard
         productName="Best Sells"
