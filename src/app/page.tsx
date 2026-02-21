@@ -1,4 +1,5 @@
 
+import Home from "./Home/page";
 type Props = {
   linkData: any[];
   ellipse: string;
@@ -9,7 +10,7 @@ type Props = {
 const page = ({ linkData, ellipse, group, style }: Props) => {
   return (
    <main>
- 
+   <Home/>
    </main>
   )
 }
