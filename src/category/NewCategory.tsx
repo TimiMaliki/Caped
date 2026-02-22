@@ -1,7 +1,7 @@
 "use client";
 
-import blondie from "../../../assets/CategoriesLayout-imagies/blondie.png";
-import whitie from "../../../assets/CategoriesLayout-imagies/whitie.png";
+import blondie from "../assets/CategoriesLayout-imagies/blondie.png";
+import whitie from "../assets/CategoriesLayout-imagies/whitie.png";
 
 import ProductCard from "@/components/component/ProductCard/ProductCard";
 import {useState , useEffect} from "react";
