@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import BestSellerComponent from "../component/BestSeller/BestSells";
+import BestSellerComponent from "../../components/component/BestSeller/BestSells";
 
 import heroImg from "../../assets/Hero-Home-Imagies/white-fashion-girl.jpeg";
 import MenImg from "../../assets/Hero-Home-Imagies/vacation-fashion.jpeg";

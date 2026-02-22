@@ -1,4 +1,4 @@
-import NewCategory from "../modules/category/NewCategory"
+import NewCategory from "../../category/NewCategory"
 
 type Props = {}
 

@@ -39,10 +39,11 @@ const ProductCard = ({
       <CardHeader className="pb-2">
         <CardTitle>{productName}</CardTitle>
         <CardDescription>{description}</CardDescription>
+        <CardDescription>${price.toFixed(2)}</CardDescription>
       </CardHeader>
 
       <CardFooter>
-        <Button className="w-full cursor-pointer bg-yellow-300">View Product</Button>
+        <Button className="w-full cursor-pointer bg-yellow-300 text-black/90">View Product</Button>
       </CardFooter>
     </Card>
   );

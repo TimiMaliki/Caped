@@ -1,4 +1,4 @@
-import Category from "../modules/category/ClothesCategory";
+import Category from "../../category/ClothesCategory";
 
 type Props = {};
 

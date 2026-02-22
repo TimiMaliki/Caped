@@ -3,7 +3,7 @@
 import blondie from "../../../assets/CategoriesLayout-imagies/blondie.png";
 import whitie from "../../../assets/CategoriesLayout-imagies/whitie.png";
 
-import ProductCard from "@/app/component/ProductCard/ProductCard";
+import ProductCard from "@/components/component/ProductCard/ProductCard";
 import {useState , useEffect} from "react";
 import {DB} from "@/app/Utils/appwrite";
 
@@ -12,12 +12,12 @@ import {DB} from "@/app/Utils/appwrite";
 type Props = {};
 
 const NewInCategory = (props: Props) => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<any[]>([]);;
 
 const fetchProducts = async () => {
   try{
-    const response = await DB.listRows({databaseId:"product" , tableId:"products"})
-      console.log(response)
+    const {total,rows} = await DB.listRows({databaseId:process.env.NEXT_PUBLIC_APPWRITE_DB_ID as string , tableId:process.env.NEXT_PUBLIC_APPWRITE_TABLE_PRODUCTS as string})
+    setProducts(rows );
   }
 
   catch(error){
@@ -48,10 +48,10 @@ useEffect(() => {
     return (
       <ProductCard
         key={product.$id}
-        productName={product.name}
-        image={product.image}
+        productName={product.productName}
+        image={product.productImage.src}
         url="#"
-        description={product.description}
+        description={product.productDescription}
         price={product.price}
       />
     );
@@ -94,3 +94,14 @@ export default NewInCategory;
       //   description="A premium white hair product"
       //   price={39.99}
       // />
+
+
+//       Create row
+
+
+// $id
+// productName
+// productImage
+// productDescription
+// price
+// stockQuantity

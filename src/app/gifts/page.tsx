@@ -1,4 +1,4 @@
-import GiftsCategory from "../modules/category/GiftsCategory";
+import GiftsCategory from "../../category/GiftsCategory";
 
 type Props = {};
 

@@ -1,4 +1,4 @@
-import BestSellerComponent from "../../component/BestSeller/BestSeller";
+import BestSellerComponent from "./BestSeller";
 
 type Props = {};
 

@@ -1,4 +1,4 @@
-import AccessoriesCategory from "../modules/category/AccessoriesCategory";
+import AccessoriesCategory from "../../category/AccessoriesCategory";
 
 type Props = {};
 

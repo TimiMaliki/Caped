@@ -1,10 +1,10 @@
 import blondie from "../../../assets/CategoriesLayout-imagies/blondie.png";
 import whitie from "../../../assets/CategoriesLayout-imagies/whitie.png";
-import ProductCard from "@/app/component/ProductCard/ProductCard";
+import ProductCard from "@/components/component/ProductCard/ProductCard";
 
 type Props = {};
 
-const AccessoriesCategory = (props: Props) => {
+const GiftsCategory = (props: Props) => {
   return (
 <div
   className="
@@ -20,7 +20,7 @@ const AccessoriesCategory = (props: Props) => {
   "
 >
       <ProductCard
-        productName="Accessories"
+        productName="Gifts"
         image={blondie}
         url="#"
         description="A beautiful blonde hair product"
@@ -51,4 +51,4 @@ const AccessoriesCategory = (props: Props) => {
   );
 };
 
-export default AccessoriesCategory;
+export default GiftsCategory;

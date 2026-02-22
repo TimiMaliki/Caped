@@ -1,4 +1,4 @@
-import ShoesCategory from "../modules/category/ShoesCategory";
+import ShoesCategory from "../../category/ShoesCategory";
 
 type Props = {};
 

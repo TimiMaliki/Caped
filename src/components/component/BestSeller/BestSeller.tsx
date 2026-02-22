@@ -3,7 +3,7 @@ import dark from "../../../assets/Hero-Home-Imagies/men-black-fashion.jpeg";
 import shorts from "../../../assets/Hero-Home-Imagies/shorts.jpeg";
 import yellow from "../../../assets/Hero-Home-Imagies/yellow-girl.jpeg";
 
-import ProductCard from "@/app/component/ProductCard/ProductCard";
+import ProductCard from "@/components/component/ProductCard/ProductCard";
 
 
 type Props = {};

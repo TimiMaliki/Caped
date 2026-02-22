@@ -1,4 +1,4 @@
-import ActivewearsCategory from "../modules/category/ActivewearsCategory";
+import ActivewearsCategory from "../../category/ActivewearsCategory";
 
 type Props = {};
 

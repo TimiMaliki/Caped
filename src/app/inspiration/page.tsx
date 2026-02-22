@@ -1,4 +1,4 @@
-import InspirationCategory from "../modules/category/InspirationCategory";
+import InspirationCategory from "../../category/InspirationCategory";
 
 type Props = {};
 
