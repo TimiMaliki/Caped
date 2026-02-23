@@ -2,12 +2,12 @@
 
 import ProductCard from "@/components/component/ProductCard/ProductCard";
 import { useState, useEffect } from "react";
-import { DB, storage } from "@/lib/Utils/appwrite";
+import { DB } from "@/lib/Utils/appwrite";
 
 const NewInCategory = () => {
   const [products, setProducts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [imageUrls, setImageUrls] = useState<Record<string, string>>({});
+ 
 
   const fetchProducts = async () => {
     try {
@@ -18,9 +18,7 @@ const NewInCategory = () => {
       
       console.log("Fetched products:", rows);
       setProducts(rows);
-      
-      // Generate preview URLs for each product
-      // await generateImagePreviews(rows);
+  
       
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -29,47 +27,7 @@ const NewInCategory = () => {
     }
   };
 
-  // const generateImagePreviews = async (products: any[]) => {
-  //   const urlMap: Record<string, string> = {};
-    
-  //   // Use Promise.all to fetch all images concurrently
-  //   await Promise.all(products.map(async (product) => {
-  //     if (product.productImage) {
-  //       try {
-  //         // Extract file ID from the stored URL
-  //         let fileId = product.productImage;
-          
-  //         if (typeof product.productImage === 'string') {
-  //           // If it's a full URL, extract the file ID
-  //           if (product.productImage.includes('files/')) {
-  //             const matches = product.productImage.match(/\/files\/([a-zA-Z0-9]+)/);
-  //             if (matches && matches[1]) {
-  //               fileId = matches[1];
-  //             }
-  //           }
-            
-  //           console.log(`Processing product ${product.$id} with fileId: ${fileId}`);
-            
-  //           // Generate preview URL with parameters for better images
-  //           const previewUrl = storage.getFilePreview(
-  //             process.env.NEXT_PUBLIC_APPWRITE_BUCKET_ID as string,
-  //             fileId,
-  //           );
-            
-  //           const urlString = previewUrl.toString();
-  //           console.log(`Generated URL for product ${product.$id}:`, urlString);
-  //           urlMap[product.$id] = urlString;
-  //         }
-  //       } catch (error) {
-  //         console.error(`Error generating preview for product ${product.$id}:`, error);
-  //         urlMap[product.$id] = ''; // Set empty string or placeholder
-  //       }
-  //     }
-  //   }));
-    
-  //   console.log("Final URL map:", urlMap);
-  //   setImageUrls(urlMap);
-  // };
+ 
 
   useEffect(() => {
     fetchProducts();
@@ -84,8 +42,6 @@ const NewInCategory = () => {
   return (
     <div className="w-full grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 md:gap-6 lg:grid-cols-4 justify-items-center">
       {products.map((product: any) => {
-        const imageUrl = imageUrls[product.$id];
-        console.log(`Rendering product ${product.$id} with image:`, imageUrl);
         
         return (
           <ProductCard

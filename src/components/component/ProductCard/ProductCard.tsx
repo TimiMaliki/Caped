@@ -71,9 +71,7 @@ const ProductCard = ({
         <Image
           src={imgError ? '/placeholder-image.jpg' : image}
           alt={productName}
-          width={400}
-          height={400}
-          className={`h-full w-full object-contain transition-transform duration-300 hover:scale-105 ${imgLoading ? 'opacity-0' : 'opacity-100'}`}
+          className={`w-full h-full w-full object-contain transition-transform duration-300 hover:scale-105 ${imgLoading ? 'opacity-0' : 'opacity-100'}`}
           onError={(e) => {
             console.error(`Image failed to load for ${productName}:`, image, e);
             setImgError(true);
