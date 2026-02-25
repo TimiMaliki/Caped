@@ -1,9 +1,5 @@
 "use client";
 
-
-
-"use client";
-
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -37,12 +33,12 @@ const ProductCard = ({
   const [imgError, setImgError] = useState(false);
   const [imgLoading, setImgLoading] = useState(true);
   
-  // Log when image prop changes
+
   useEffect(() => {
     console.log(`ProductCard ${productName} received image:`, image);
   }, [image, productName]);
 
-  // If no image URL, show placeholder
+ 
   if (!image) {
     return (
       <Card className="w-full rounded-xl border shadow-sm transition hover:shadow-md mb-10">
@@ -52,7 +48,7 @@ const ProductCard = ({
         <CardHeader className="pb-2">
           <CardTitle>{productName}</CardTitle>
           <CardDescription>{description}</CardDescription>
-          <CardDescription>${price.toFixed(2)}</CardDescription>
+          <CardDescription>${price}</CardDescription>
         </CardHeader>
         <CardFooter>
           <Button className="w-full cursor-pointer bg-yellow-300 text-black/90">View Product</Button>
@@ -94,7 +90,7 @@ const ProductCard = ({
         <CardTitle>{productName}</CardTitle>
         <CardDescription>{description}</CardDescription>
         <CardDescription className="text-lg font-semibold text-yellow-600">
-          ${price.toFixed(2)}
+          ${price}
         </CardDescription>
       </CardHeader>
 
