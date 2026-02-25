@@ -3,6 +3,7 @@
 import ProductCard from "@/components/component/ProductCard/ProductCard";
 import { useState, useEffect } from "react";
 import { DB } from "@/lib/Utils/appwrite";
+import Link from "next/link";
 
 const NewInCategory = () => {
   const [products, setProducts] = useState<any[]>([]);
@@ -41,19 +42,22 @@ const NewInCategory = () => {
 
   return (
     <div className="w-full grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 md:gap-6 lg:grid-cols-4 justify-items-center">
-      {products.map((product: any) => {
-        
-        return (
+         {products.map((product) => (
+         <Link 
+          key={product.$id} 
+          href={`/new/${product.$id}`} 
+          className="w-full"
+        >
           <ProductCard
-            key={product.$id}
+            id={product.$id}
             productName={product.productName}
             image={product.productImage}
             url="#"
             description={product.productDescription}
             price={product.price}
           />
-        );
-      })}
+        </Link>
+      ))}
     </div>
   );
 };

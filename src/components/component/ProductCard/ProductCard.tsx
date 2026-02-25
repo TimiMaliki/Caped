@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/card";
 
 type Props = {
+  id: string;
   productName: string;
   image: string;
   url: string;
@@ -31,6 +32,7 @@ const ProductCard = ({
   href,
   description,
   price,
+  id,
 }: Props) => {
   const [imgError, setImgError] = useState(false);
   const [imgLoading, setImgLoading] = useState(true);
@@ -45,7 +47,7 @@ const ProductCard = ({
     return (
       <Card className="w-full rounded-xl border shadow-sm transition hover:shadow-md mb-10">
         <div className="w-full h-45 sm:h-50 md:h-56 bg-gray-200 flex items-center justify-center">
-          <span className="text-gray-400">No image</span>
+          <span className="text-gray-400">{id}</span>
         </div>
         <CardHeader className="pb-2">
           <CardTitle>{productName}</CardTitle>
@@ -71,6 +73,8 @@ const ProductCard = ({
         <Image
           src={imgError ? '/placeholder-image.jpg' : image}
           alt={productName}
+           width={600}
+           height={600}
           className={`w-full h-full w-full object-contain transition-transform duration-300 hover:scale-105 ${imgLoading ? 'opacity-0' : 'opacity-100'}`}
           onError={(e) => {
             console.error(`Image failed to load for ${productName}:`, image, e);
@@ -95,7 +99,7 @@ const ProductCard = ({
       </CardHeader>
 
       <CardFooter>
-        <Button className="w-full cursor-pointer bg-yellow-300 text-black/90 hover:bg-yellow-400">
+        <Button className="w-full cursor-pointer bg-yellow-300 text-black/90 hover:bg-yellow-400" >
           View Product
         </Button>
       </CardFooter>
