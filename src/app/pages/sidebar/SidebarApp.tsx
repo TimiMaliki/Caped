@@ -31,12 +31,12 @@ const sidebarmenu: Array<sideMenu> = [
   {
     icons: cloth,
     title: "Clothing",
-    url: "/Clothes",
+    url: "/clothes",
   },
   {
     icons: shoe,
     title: "Shoes",
-    url: "/Shoes",
+    url: "/shoes",
   },
   {
     icons: accessories,

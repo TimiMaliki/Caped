@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import {
   Card,
   CardDescription,
@@ -10,25 +11,24 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Url } from "next/dist/shared/lib/router/router";
 
 type Props = {
   id: string;
   productName: string;
-  image: string;
-  url: string;
-  href?: string;
+  image: string
   description: string;
   price: number;
+  onPress: () => void;
 };
 
 const ProductCard = ({
   productName,
   image,
-  url,
-  href,
   description,
   price,
   id,
+  onPress
 }: Props) => {
   const [imgError, setImgError] = useState(false);
   const [imgLoading, setImgLoading] = useState(true);
@@ -95,9 +95,12 @@ const ProductCard = ({
       </CardHeader>
 
       <CardFooter>
-        <Button className="w-full cursor-pointer bg-yellow-300 text-black/90 hover:bg-yellow-400" >
+       
+          <Button className="w-full cursor-pointer bg-yellow-300 text-black/90 hover:bg-yellow-400"  onClick={onPress}>
           View Product
         </Button>
+      
+      
       </CardFooter>
     </Card>
   );

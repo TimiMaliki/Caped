@@ -3,12 +3,14 @@
 import ProductCard from "@/components/component/ProductCard/ProductCard";
 import { useState, useEffect } from "react";
 import { DB } from "@/lib/Utils/appwrite";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const ClothesCategory = () => {
   const [products, setProducts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
- 
+ const router = useRouter()
+
+
 
   const fetchProducts = async () => {
     try {
@@ -41,22 +43,17 @@ const ClothesCategory = () => {
   }
 
   return (
-    <div className="w-full grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 md:gap-6 lg:grid-cols-4 justify-items-center">
+    <div className="w-full grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-3 md:gap-6 lg:grid-cols-4 justify-items-center">
          {products.map((product) => (
-         <Link 
-          key={product.$id} 
-          href={""} 
-          className="w-full"
-        >
           <ProductCard
             id={product.$id}
+             key={product.$id}
             productName={product.productName}
             image={product.productImage}
-            url="#"
+            onPress={() => router.push(`/product/${product.$id}`)}
             description={product.productDescription}
             price={product.price}
           />
-        </Link>
       ))}
     </div>
   );
