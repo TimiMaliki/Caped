@@ -105,7 +105,7 @@ const ClothesDetailsPage = () => {
               {product.productName || "Untitled Product"}
             </h1>
             <p className="text-2xl font-semibold text-yellow-600">
-              ${product.price?.toFixed(2) || "0.00"}
+              ${product.price || "0.00"}
             </p>
           </div>
 

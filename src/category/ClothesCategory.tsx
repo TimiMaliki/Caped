@@ -50,7 +50,7 @@ const ClothesCategory = () => {
              key={product.$id}
             productName={product.productName}
             image={product.productImage}
-            onPress={() => router.push(`/product/${product.$id}`)}
+            onPress={() => router.push(`/clothes/${product.$id}`)}
             description={product.productDescription}
             price={product.price}
           />
