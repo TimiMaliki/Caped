@@ -5,8 +5,8 @@ type Props = {}
 const New= (props: Props) => {
   return (
     <div>
-          <section className="py-0 w-full ">
-      <div className="px-4 sm:px-6 lg:px-8">
+         <section className="py-0 w-full mb-24">
+      <div className="px-4  sm:px-6 lg:px-8">
         <NewCategory />
       </div>
     </section>

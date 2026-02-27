@@ -24,7 +24,7 @@ const ShoesDetailsPage = () => {
     
       const response = await DatabasesDB.getDocument({
         databaseId: process.env.NEXT_PUBLIC_APPWRITE_DB_ID as string,
-         collectionId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_CLOTHES as string, 
+        collectionId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_SHOES as string, 
        documentId: productId
       });
       
@@ -161,7 +161,7 @@ const ShoesDetailsPage = () => {
             <div className="space-y-2 text-gray-600">
               <p>Product ID: {product.$id}</p>
               {product.category && <p>Category: {product.category}</p>}
-              {product.brand && <p>Brand: {product.brand}</p>}
+              {product.tags&& <p>tags: {product.tags}</p>}
               {product.inStock !== undefined && (
                 <p>Availability: {product.inStock ? "In Stock" : "Out of Stock"}</p>
               )}

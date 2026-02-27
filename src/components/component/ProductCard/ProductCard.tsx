@@ -42,7 +42,7 @@ const ProductCard = ({
   if (!image) {
     return (
       <Card className="w-full rounded-xl border shadow-sm transition hover:shadow-md mb-10">
-        <div className="w-full h-45 sm:h-50 md:h-56 bg-gray-200 flex items-center justify-center">
+        <div className="w-full h-45 sm:h-50 md:h-56 bg-gray-200 flex items-center justify-center ">
           <span className="text-gray-400">{id}</span>
         </div>
         <CardHeader className="pb-2">
@@ -58,9 +58,9 @@ const ProductCard = ({
   }
 
   return (
-    <Card className="w-full rounded-xl border shadow-sm transition hover:shadow-md mb-10">
+    <Card className="w-full rounded-xl border shadow-sm transition hover:shadow-md">
       {/* Image wrapper */}
-      <div className="w-full h-45 sm:h-50 md:h-56 overflow-hidden bg-gray-100 relative">
+      <div className="w-full h-45 sm:h-50 md:h-56 overflow-hidden bg-gray-100 relative -mt-[22.9px] rounded-xl">
         {imgLoading && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-8 h-8 border-2 border-gray-300 border-t-yellow-300 rounded-full animate-spin"></div>
@@ -71,7 +71,7 @@ const ProductCard = ({
           alt={productName}
            width={600}
            height={600}
-          className={`w-full h-full w-full object-contain transition-transform duration-300 hover:scale-105 ${imgLoading ? 'opacity-0' : 'opacity-100'}`}
+          className={`w-full h-full w-full object-cover transition-transform duration-300 hover:scale-105 ${imgLoading ? 'opacity-0' : 'opacity-100'}`}
           onError={(e) => {
             console.error(`Image failed to load for ${productName}:`, image, e);
             setImgError(true);

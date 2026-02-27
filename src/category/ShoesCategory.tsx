@@ -16,7 +16,7 @@ const ShoesCategory = () => {
     try {
       const { total, rows } = await DB.listRows({
         databaseId: process.env.NEXT_PUBLIC_APPWRITE_DB_ID as string,
-        tableId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_CLOTHES as string
+        tableId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_SHOES as string
       });
       
       console.log("Fetched products:", rows);
