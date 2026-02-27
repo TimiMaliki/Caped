@@ -7,7 +7,6 @@ const Clothes = (props: Props) => {
     <section className="py-4 w-full ">
       <div className="px-4 sm:px-6 lg:px-8">
         <ShoesCategory />
-        <ShoesCategory />
       </div>
     </section>
   );

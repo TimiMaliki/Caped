@@ -3,14 +3,14 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
-import { DB , DatabasesDB} from "@/lib/Utils/appwrite";
+import { DatabasesDB} from "@/lib/Utils/appwrite";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShoppingCart, Heart, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
-const ProductDetailsPage = () => {
+const InspirationDetailPage = () => {
   const params = useParams();
   const [product, setProduct] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -21,13 +21,13 @@ const ProductDetailsPage = () => {
     try {
       const productId = params.productId as string;
       
-     
+    
       const response = await DatabasesDB.getDocument({
         databaseId: process.env.NEXT_PUBLIC_APPWRITE_DB_ID as string,
-         collectionId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_PRODUCTS as string,
-        documentId: productId  
+         collectionId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_CLOTHES as string, 
+       documentId: productId
       });
-
+      
       setProduct(response);
     } catch (error) {
       console.error("Error fetching product:", error);
@@ -54,9 +54,9 @@ const ProductDetailsPage = () => {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h2 className="text-2xl font-bold mb-4">Product not found</h2>
-        <Link href="/new">
+        <Link href="/inspiration">
           <Button className="bg-yellow-300 text-black/90 hover:bg-yellow-400">
-            Back to New Arrivals
+            Back to Inspiration
           </Button>
         </Link>
       </div>
@@ -65,11 +65,11 @@ const ProductDetailsPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Back button */}
-      <Link href="/new" className="inline-block mb-6">
+      {/* Back button - goes back to Inspiration page */}
+      <Link href="/inspiration" className="inline-block mb-6">
         <Button variant="ghost" className="flex items-center gap-2">
           <ArrowLeft size={20} />
-          Back to New Arrivals
+          Back to Inspiration
         </Button>
       </Link>
 
@@ -105,7 +105,7 @@ const ProductDetailsPage = () => {
               {product.productName || "Untitled Product"}
             </h1>
             <p className="text-2xl font-semibold text-yellow-600">
-              ${product.price?.toFixed(2) || "0.00"}
+              ${product.price || "0.00"}
             </p>
           </div>
 
@@ -165,6 +165,8 @@ const ProductDetailsPage = () => {
               {product.inStock !== undefined && (
                 <p>Availability: {product.inStock ? "In Stock" : "Out of Stock"}</p>
               )}
+              {product.material && <p>Material: {product.material}</p>}
+              {product.careInstructions && <p>Care: {product.careInstructions}</p>}
             </div>
           </div>
         </div>
@@ -173,4 +175,4 @@ const ProductDetailsPage = () => {
   );
 };
 
-export default ProductDetailsPage;
+export default InspirationDetailPage;
