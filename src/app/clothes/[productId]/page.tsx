@@ -66,7 +66,7 @@ const ClothesDetailsPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Back button - goes back to clothes page */}
-      <Link href="/clothes" className="inline-block mb-6">
+      <Link href="/clothes" className="inline-block mb-6 cursor-pointer">
         <Button variant="ghost" className="flex items-center gap-2">
           <ArrowLeft size={20} />
           Back to Clothes
