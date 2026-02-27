@@ -55,7 +55,7 @@ const AccessoriesDetailPage = () => {
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h2 className="text-2xl font-bold mb-4">Product not found</h2>
         <Link href="/accessories">
-          <Button className="bg-yellow-300 text-black/90 hover:bg-yellow-400">
+          <Button className="bg-yellow-300 text-black/90 hover:bg-yellow-400 cursor-pointer">
             Back to Accessories
           </Button>
         </Link>
@@ -66,7 +66,7 @@ const AccessoriesDetailPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Back button - goes back to Accessories page */}
-      <Link href="/accessories" className="inline-block mb-6">
+      <Link href="/accessories" className="inline-block mb-6 cursor-pointer">
         <Button variant="ghost" className="flex items-center gap-2">
           <ArrowLeft size={20} />
           Back to Accessories
@@ -161,7 +161,8 @@ const AccessoriesDetailPage = () => {
             <div className="space-y-2 text-gray-600">
               <p>Product ID: {product.$id}</p>
               {product.category && <p>Category: {product.category}</p>}
-              {product.brand && <p>Brand: {product.brand}</p>}
+                {product.stockQuantity&& <p>Stock Quantity: {product.stockQuantity}</p>}
+              {product.tags&& <p>tags: {product.tags}</p>}
               {product.inStock !== undefined && (
                 <p>Availability: {product.inStock ? "In Stock" : "Out of Stock"}</p>
               )}
