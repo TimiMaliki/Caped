@@ -161,6 +161,7 @@ const ShoesDetailsPage = () => {
             <div className="space-y-2 text-gray-600">
               <p>Product ID: {product.$id}</p>
               {product.category && <p>Category: {product.category}</p>}
+               {product.stockQuantity&& <p>Stock Quantity: {product.stockQuantity}</p>}
               {product.tags&& <p>tags: {product.tags}</p>}
               {product.inStock !== undefined && (
                 <p>Availability: {product.inStock ? "In Stock" : "Out of Stock"}</p>
