@@ -55,7 +55,7 @@ const ClothesDetailsPage = () => {
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h2 className="text-2xl font-bold mb-4">Product not found</h2>
         <Link href="/Clothes">
-          <Button className="bg-yellow-300 text-black/90 hover:bg-yellow-400">
+          <Button className="bg-yellow-300 text-black/90 hover:bg-yellow-400 cursor-pointer">
             Back to Clothes
           </Button>
         </Link>
