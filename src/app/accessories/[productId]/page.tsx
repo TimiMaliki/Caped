@@ -24,7 +24,7 @@ const AccessoriesDetailPage = () => {
     
       const response = await DatabasesDB.getDocument({
         databaseId: process.env.NEXT_PUBLIC_APPWRITE_DB_ID as string,
-         collectionId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_CLOTHES as string, 
+         collectionId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_ACCESSORIES as string, 
        documentId: productId
       });
       
