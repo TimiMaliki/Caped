@@ -40,7 +40,7 @@ export default function RootLayout({
             <div className="flex flex-col px-0 lg:px-24 flex-1">
               <Header />
              
-              <main className="pt-38 px-4 sm:px-6 lg:px-10">
+              <main className="pt-24 px-4 sm:px-6 lg:px-10">
                 {children}
               </main>
 

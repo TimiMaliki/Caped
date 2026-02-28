@@ -55,7 +55,7 @@ const ProductDetailsPage = () => {
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h2 className="text-2xl font-bold mb-4">Product not found</h2>
         <Link href="/new">
-          <Button className="bg-yellow-300 text-black/90 hover:bg-yellow-400">
+          <Button className="bg-yellow-300 text-black/90 hover:bg-yellow-400 cursor-pointer">
             Back to New Arrivals
           </Button>
         </Link>
@@ -66,8 +66,8 @@ const ProductDetailsPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Back button */}
-      <Link href="/new" className="inline-block mb-6">
-        <Button variant="ghost" className="flex items-center gap-2">
+      <Link href="/new" className="inline-block mb-6 cursor-pointer">
+        <Button variant="ghost" className="flex items-center gap-2 cursor-pointer">
           <ArrowLeft size={20} />
           Back to New Arrivals
         </Button>

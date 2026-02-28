@@ -72,12 +72,14 @@ export default function Header() {
             <div className="md:hidden fixed inset-x-0 top-10 z-50 bg-white shadow-md">
               <ul className="flex flex-col items-center gap-6 pb-8 font-[Poppins] text-[1.063rem] font-medium">
                 {navData.map((data) => (
+                    <Link href={data.link} key={data.title}>
                   <li
                     key={data.title}
                     className="cursor-pointer border-b-2 border-transparent transition hover:border-black"
                   >
                     {data.title}
                   </li>
+                  </Link>
                 ))}
 
                 <div className="flex gap-6 items-center">
