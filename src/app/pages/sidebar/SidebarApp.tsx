@@ -79,6 +79,7 @@ const SidebarApp = (props: Props) => {
   variant="floating"
     >
       <SidebarHeader className="p-6 font-bold text-xl bg-white relative">
+        <Link href="/">
         <div className="flex cursor-pointer ml-8 items-center">
           <img src={Eclipse.src} alt="" className="w-17.5 h-17.5" />
 
@@ -91,6 +92,7 @@ const SidebarApp = (props: Props) => {
             </div>
           </div>
         </div>
+        </Link>
       </SidebarHeader>
 
       <SidebarContent className="bg-white">

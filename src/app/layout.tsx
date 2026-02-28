@@ -5,6 +5,7 @@ import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import SidebarApp from "./pages/sidebar/SidebarApp";
 import Home from "./Home/page";
+import Footer from "./pages/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +45,7 @@ export default function RootLayout({
                 {children}
               </main>
 
+              <Footer />
               {/* <div className="
               ">
                  <Home />
