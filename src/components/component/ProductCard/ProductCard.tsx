@@ -96,7 +96,7 @@ const ProductCard = ({
 
       <CardFooter>
        
-          <Button className="w-full cursor-pointer bg-yellow-300 text-black/90 hover:bg-yellow-400"  onClick={onPress}>
+          <Button className="w-full cursor-pointer bg-yellow-300 text-black/90 hover:bg-yellow-400"  onClick={onPress} >
           View Product
         </Button>
       
