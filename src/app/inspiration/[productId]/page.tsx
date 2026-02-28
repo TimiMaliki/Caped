@@ -24,7 +24,7 @@ const InspirationDetailPage = () => {
     
       const response = await DatabasesDB.getDocument({
         databaseId: process.env.NEXT_PUBLIC_APPWRITE_DB_ID as string,
-         collectionId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_CLOTHES as string, 
+         collectionId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_INSPIRATIONALPRODUCT as string, 
        documentId: productId
       });
       
@@ -55,7 +55,7 @@ const InspirationDetailPage = () => {
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h2 className="text-2xl font-bold mb-4">Product not found</h2>
         <Link href="/inspiration">
-          <Button className="bg-yellow-300 text-black/90 hover:bg-yellow-400">
+          <Button className="bg-yellow-300 text-black/90 hover:bg-yellow-400 cursor-pointer">
             Back to Inspiration
           </Button>
         </Link>
@@ -67,7 +67,7 @@ const InspirationDetailPage = () => {
     <div className="container mx-auto px-4 py-8">
       {/* Back button - goes back to Inspiration page */}
       <Link href="/inspiration" className="inline-block mb-6">
-        <Button variant="ghost" className="flex items-center gap-2">
+        <Button variant="ghost" className="flex items-center gap-2 cursor-pointer">
           <ArrowLeft size={20} />
           Back to Inspiration
         </Button>

@@ -24,7 +24,7 @@ const GiftsDetailPage = () => {
     
       const response = await DatabasesDB.getDocument({
         databaseId: process.env.NEXT_PUBLIC_APPWRITE_DB_ID as string,
-         collectionId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_CLOTHES as string, 
+         collectionId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_GIFTSPRODUCT as string, 
        documentId: productId
       });
       
@@ -55,7 +55,7 @@ const GiftsDetailPage = () => {
       <div className="flex flex-col items-center justify-center min-h-screen">
         <h2 className="text-2xl font-bold mb-4">Product not found</h2>
         <Link href="/gifts">
-          <Button className="bg-yellow-300 text-black/90 hover:bg-yellow-400">
+          <Button className="bg-yellow-300 text-black/90 hover:bg-yellow-400 cursor-pointer">
             Back to Gifts
           </Button>
         </Link>
@@ -67,7 +67,7 @@ const GiftsDetailPage = () => {
     <div className="container mx-auto px-4 py-8">
       {/* Back button - goes back to gifts page */}
       <Link href="/gifts" className="inline-block mb-6">
-        <Button variant="ghost" className="flex items-center gap-2">
+        <Button variant="ghost" className="flex items-center gap-2 cursor-pointer">
           <ArrowLeft size={20} />
           Back to gifts
         </Button>
@@ -160,8 +160,9 @@ const GiftsDetailPage = () => {
             <h3 className="text-lg font-semibold mb-4">Product Details</h3>
             <div className="space-y-2 text-gray-600">
               <p>Product ID: {product.$id}</p>
-              {product.category && <p>Category: {product.category}</p>}
-              {product.tags && <p>Brand: {product.tags}</p>}
+             {product.category && <p>Category: {product.category}</p>}
+                {product.stockQuantity&& <p>Stock Quantity: {product.stockQuantity}</p>}
+              {product.tags&& <p>tags: {product.tags}</p>}
               {product.inStock !== undefined && (
                 <p>Availability: {product.inStock ? "In Stock" : "Out of Stock"}</p>
               )}
