@@ -67,7 +67,7 @@ const AccessoriesDetailPage = () => {
     <div className="container mx-auto px-4 py-8">
       {/* Back button - goes back to Accessories page */}
       <Link href="/accessories" className="inline-block mb-6 cursor-pointer">
-        <Button variant="ghost" className="flex items-center gap-2">
+        <Button variant="ghost" className="flex items-center gap-2 cursor-pointer">
           <ArrowLeft size={20} />
           Back to Accessories
         </Button>
