@@ -148,7 +148,7 @@ export default function PackagingPage() {
             CAPED ensures every order arrives with care, precision,
             and the respect your style deserves.
           </p>
-          <Button className="px-12 py-6 text-lg rounded-full">
+          <Button className="px-12 py-6 text-lg  bg-yellow-400 text-black rounded-full">
             Shop CAPED
           </Button>
         </motion.div>

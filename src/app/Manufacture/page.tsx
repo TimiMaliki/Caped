@@ -141,7 +141,7 @@ export default function ManufacturingPage() {
             From New York to the world — CAPED delivers fashion
             that feels authoritative, elevated, and undeniably royal.
           </p>
-          <Button className="px-12 py-6 text-lg rounded-full">
+          <Button className="px-12 py-6 text-lg bg-yellow-400 text-black rounded-full">
             Experience CAPED
           </Button>
         </motion.div>

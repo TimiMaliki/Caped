@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
 
         {/* BOTTOM */}
-        <div className="mt-12 border-t pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
+        <div className="mt-12 border-t pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-black">
           <p>© {new Date().getFullYear()} Caped. All rights reserved.</p>
           <div className="flex gap-4 mt-3 md:mt-0">
             <Link href="/privacy" className="hover:text-black">Privacy</Link>

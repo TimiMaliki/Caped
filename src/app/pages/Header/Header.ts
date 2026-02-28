@@ -24,10 +24,12 @@ interface navData {
 const brandName = "caped"
 
 const navData = [
-  { title: "Home", link: "/Home" },
+  { title: "Home", link: "/" },
   { title: "story", link: "/Story" },
   { title: "manufacturing", link: "/Manufacture" },
   { title: "packaging", link: "/Packaging" },
 ]
 
-export { brandName, navData , sideMenu }
+
+export { brandName, navData };
+export type { sideMenu };

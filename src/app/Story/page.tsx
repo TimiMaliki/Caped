@@ -93,7 +93,7 @@ export default function StoryPage() {
 
       {/* VALUES */}
       <section className="py-32 px-6 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-12 ">
           {[
             {
               title: "Built with Purpose",
@@ -138,7 +138,7 @@ export default function StoryPage() {
           <p className="text-white/80 text-lg mb-10">
             CAPED is more than a brand — it’s a reminder of who you are becoming.
           </p>
-          <Button className="px-10 py-6 text-lg rounded-full">
+          <Button className="px-10 py-6 text-lg bg-yellow-400 text-black rounded-full">
             Shop CAPED
           </Button>
         </motion.div>

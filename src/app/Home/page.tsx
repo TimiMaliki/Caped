@@ -115,7 +115,7 @@ export default function Home() {
       </section>
 
       {/* ================= BRAND STORY ================= */}
-      <section className="py-24 bg-black text-white">
+      <section className="py-24 bg-black text-white rounded-2xl">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -127,7 +127,7 @@ export default function Home() {
             More Than Fashion
           </h2>
 
-          <p className="mt-8 text-white/70 leading-relaxed">
+          <p className="mt-8 text-white leading-relaxed">
             Caped is a movement. Every piece is designed with intention —
             balancing bold aesthetics, premium quality, and cultural relevance.
             This is clothing that speaks before you do.
@@ -162,7 +162,7 @@ export default function Home() {
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="py-28 bg-yellow-300 text-white mb-24 rounded">
+      <section className="py-28 bg-yellow-400 text-white mb-24 rounded-2xl">
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
