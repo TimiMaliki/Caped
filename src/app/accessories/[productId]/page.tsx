@@ -1,9 +1,8 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
-import { DatabasesDB} from "@/lib/Utils/appwrite";
+import { DatabasesDB } from "@/lib/Utils/appwrite";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,14 +19,14 @@ const AccessoriesDetailPage = () => {
   const fetchProduct = async () => {
     try {
       const productId = params.productId as string;
-      
-    
+
       const response = await DatabasesDB.getDocument({
         databaseId: process.env.NEXT_PUBLIC_APPWRITE_DB_ID as string,
-         collectionId: process.env.NEXT_PUBLIC_APPWRITE_TABLE_ACCESSORIES as string, 
-       documentId: productId
+        collectionId: process.env
+          .NEXT_PUBLIC_APPWRITE_TABLE_ACCESSORIES as string,
+        documentId: productId,
       });
-      
+
       setProduct(response);
     } catch (error) {
       console.error("Error fetching product:", error);
@@ -67,7 +66,10 @@ const AccessoriesDetailPage = () => {
     <div className="container mx-auto px-4 py-8">
       {/* Back button - goes back to Accessories page */}
       <Link href="/accessories" className="inline-block mb-6 cursor-pointer">
-        <Button variant="ghost" className="flex items-center gap-2 cursor-pointer">
+        <Button
+          variant="ghost"
+          className="flex items-center gap-2 cursor-pointer"
+        >
           <ArrowLeft size={20} />
           Back to Accessories
         </Button>
@@ -161,13 +163,19 @@ const AccessoriesDetailPage = () => {
             <div className="space-y-2 text-gray-600">
               <p>Product ID: {product.$id}</p>
               {product.category && <p>Category: {product.category}</p>}
-                {product.stockQuantity&& <p>Stock Quantity: {product.stockQuantity}</p>}
-              {product.tags&& <p>tags: {product.tags}</p>}
+              {product.stockQuantity && (
+                <p>Stock Quantity: {product.stockQuantity}</p>
+              )}
+              {product.tags && <p>tags: {product.tags}</p>}
               {product.inStock !== undefined && (
-                <p>Availability: {product.inStock ? "In Stock" : "Out of Stock"}</p>
+                <p>
+                  Availability: {product.inStock ? "In Stock" : "Out of Stock"}
+                </p>
               )}
               {product.material && <p>Material: {product.material}</p>}
-              {product.careInstructions && <p>Care: {product.careInstructions}</p>}
+              {product.careInstructions && (
+                <p>Care: {product.careInstructions}</p>
+              )}
             </div>
           </div>
         </div>
