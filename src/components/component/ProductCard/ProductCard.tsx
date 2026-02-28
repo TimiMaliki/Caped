@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { StaticImageData } from "next/image";
 import {
   Card,
   CardDescription,
@@ -16,7 +16,7 @@ import { Url } from "next/dist/shared/lib/router/router";
 type Props = {
   id: string;
   productName: string;
-  image: string
+  image: string | StaticImageData;
   description: string;
   price: number;
   onPress: () => void;
