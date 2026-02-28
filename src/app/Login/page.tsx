@@ -45,12 +45,7 @@ export default function LoginPage() {
               placeholder="Password"
               className="h-15 rounded-lg border-black/40"
             />
-            <Link href="/Signup">
-              <Button className="w-full h-15 cursor-pointer rounded-lg bg-black text-white hover:bg-black/90">
-                Create account
-              </Button>
-            </Link>
-
+          
             <div className="text-right">
               <Link href="/Forgot">
                 <span className="text-xs text-black/40 underline cursor-pointer">
@@ -62,7 +57,7 @@ export default function LoginPage() {
 
           {/* ================= LOGIN CTA ================= */}
           <div className="grid gap-4">
-            <Button className="h-15 rounded-lg bg-black text-white hover:bg-black/90">
+            <Button className="h-15 rounded-lg bg-black text-white hover:bg-black/90 cursor-pointer">
               Log In
             </Button>
 
@@ -75,6 +70,12 @@ export default function LoginPage() {
               </Link>
             </div>
           </div>
+           {/* ================= CREATE ACCOUNT CTA ================= */}
+                <Link href="/Signup">
+              <Button className="w-full h-15 cursor-pointer rounded-lg bg-black text-white hover:bg-black/90">
+                Create account
+              </Button>
+            </Link>
 
           {/* ================= SOCIAL LOGIN ================= */}
           <div className="grid gap-4 pt-4">
