@@ -1,4 +1,4 @@
-"use client";
+
 
 import {Client , TablesDB  , Databases} from 'appwrite';
 
