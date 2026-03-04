@@ -10,6 +10,14 @@ import photo from "../../assets/authLayout-image/Photo.png";
 import Link from "next/link";
 
 export default function LoginPage() {
+  const auth = async () => {
+    try{
+    
+    }
+    catch(error){
+      console.error("Error during authentication:", error);
+    }
+  }
   return (
     <div className="relative min-h-screen w-full">
       {/* ================= BACKGROUND IMAGE ================= */}

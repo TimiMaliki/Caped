@@ -36,7 +36,7 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "src/components/component/ProductType"
-  ],
+, "src/middleware"  ],
   "exclude": [
     "node_modules"
   ]
