@@ -52,7 +52,7 @@ export default function Home() {
             </Link>
 
             <Link href="/story">
-              <button className="px-8 py-3 border border-white/40 rounded-full cursor-pointer hover:bg-black hover:text-white transition">
+              <button className="x-4 md:px-8 py-2 md:py-3  border border-black rounded-full cursor-pointer hover:bg-black hover:text-white transition">
                 Our Story
               </button>
             </Link>
