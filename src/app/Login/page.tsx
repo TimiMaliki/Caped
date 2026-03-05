@@ -8,20 +8,30 @@ import Apple from "../../assets/authLayout-image/Apple-logo.png";
 import Logo from "../../assets/authLayout-image/Logo.png";
 import photo from "../../assets/authLayout-image/Photo.png";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import {account , IDGenerator } from "../../lib/Utils/appwrite"
+import { account } from "../../lib/Utils/appwrite";
+import { Models } from "appwrite";
 
 export default function LoginPage() {
-   const router = useRouter();
+  const router = useRouter();
+  const [user, setUser] = useState<Models.User | null>(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    const checkUser = async () => {
+      setUser(await account.get());
+    };
+    checkUser();
+  }, []);
+
   const authLogin = async () => {
     try {
       setLoading(true);
-        await account.createEmailPasswordSession(email, password);
+      await account.createEmailPasswordSession(email, password);
+      setUser(await account.get());
       setEmail("");
       setPassword("");
       router.push("/"); // redirect after login
@@ -60,7 +70,7 @@ export default function LoginPage() {
               type="email"
               placeholder="Email"
               value={email}
-               onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               className="h-15 rounded-lg border-black/40"
             />
 
@@ -71,7 +81,7 @@ export default function LoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-          
+
             <div className="text-right">
               <Link href="/Forgot">
                 <span className="text-xs text-black/40 underline cursor-pointer">
@@ -83,8 +93,12 @@ export default function LoginPage() {
 
           {/* ================= LOGIN CTA ================= */}
           <div className="grid gap-4">
-            <Button className="h-15 rounded-lg bg-black text-white hover:bg-black/90 cursor-pointer" onClick={authLogin} disabled={loading}>
-            {loading ? "Logging in..." : "Log In"}
+            <Button
+              className="h-15 rounded-lg bg-black text-white hover:bg-black/90 cursor-pointer"
+              onClick={authLogin}
+              disabled={loading}
+            >
+              {loading ? "Logging in..." : "Log In"}
             </Button>
 
             <div className="flex justify-end items-center gap-1 text-xs">
@@ -96,12 +110,12 @@ export default function LoginPage() {
               </Link>
             </div>
           </div>
-           {/* ================= CREATE ACCOUNT CTA ================= */}
-                <Link href="/Signup">
-              <Button className="w-full h-15 cursor-pointer rounded-lg bg-black text-white hover:bg-black/90">
-                Create account
-              </Button>
-            </Link>
+          {/* ================= CREATE ACCOUNT CTA ================= */}
+          <Link href="/Signup">
+            <Button className="w-full h-15 cursor-pointer rounded-lg bg-black text-white hover:bg-black/90">
+              Create account
+            </Button>
+          </Link>
 
           {/* ================= SOCIAL LOGIN ================= */}
           <div className="grid gap-4 pt-4">
