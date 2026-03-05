@@ -1,6 +1,6 @@
 
 
-import {Client , TablesDB  , Databases ,  Account} from 'appwrite';
+import {Client , TablesDB  , Databases ,  Account , ID} from 'appwrite';
 
 
 
@@ -13,6 +13,7 @@ export const appwriteClient = new Client()
   export  const DB = new TablesDB(appwriteClient);
   export const DatabasesDB = new Databases(appwriteClient);
   export const account  = new Account(appwriteClient)
+  export const IDGenerator = ID
 
 
 

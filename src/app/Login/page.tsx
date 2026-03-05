@@ -8,16 +8,30 @@ import Apple from "../../assets/authLayout-image/Apple-logo.png";
 import Logo from "../../assets/authLayout-image/Logo.png";
 import photo from "../../assets/authLayout-image/Photo.png";
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import {account , IDGenerator } from "../../lib/Utils/appwrite"
 
 export default function LoginPage() {
-  const auth = async () => {
-    try{
-    
+   const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const authLogin = async () => {
+    try {
+      setLoading(true);
+        await account.createEmailPasswordSession(email, password);
+      setEmail("");
+      setPassword("");
+      router.push("/"); // redirect after login
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Invalid email or password");
+    } finally {
+      setLoading(false);
     }
-    catch(error){
-      console.error("Error during authentication:", error);
-    }
-  }
+  };
   return (
     <div className="relative min-h-screen w-full">
       {/* ================= BACKGROUND IMAGE ================= */}
@@ -45,6 +59,8 @@ export default function LoginPage() {
             <Input
               type="email"
               placeholder="Email"
+              value={email}
+               onChange={(e) => setEmail(e.target.value)}
               className="h-15 rounded-lg border-black/40"
             />
 
@@ -52,6 +68,8 @@ export default function LoginPage() {
               type="password"
               placeholder="Password"
               className="h-15 rounded-lg border-black/40"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           
             <div className="text-right">
@@ -65,8 +83,8 @@ export default function LoginPage() {
 
           {/* ================= LOGIN CTA ================= */}
           <div className="grid gap-4">
-            <Button className="h-15 rounded-lg bg-black text-white hover:bg-black/90 cursor-pointer">
-              Log In
+            <Button className="h-15 rounded-lg bg-black text-white hover:bg-black/90 cursor-pointer" onClick={authLogin} disabled={loading}>
+            {loading ? "Logging in..." : "Log In"}
             </Button>
 
             <div className="flex justify-end items-center gap-1 text-xs">

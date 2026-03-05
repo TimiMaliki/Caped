@@ -1,14 +1,18 @@
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
+// import type { NextRequest } from "next/server";
 
-export async function middleware(request: Request) {
-    const user = false
-   
-    if(!user ){
-        const  response = NextResponse.redirect(new URL("/login"))
-    }
-    return NextResponse.next();
-}
+// export function middleware(request: NextRequest) {
+//   const hasSession = request.cookies
+//     .getAll()
+//     .some(cookie => cookie.name.startsWith("a_session_"));
 
-export const config = {
-    matcher: ["/login" , "/signup" , "/forgot"]
-}
+//   if (!hasSession) {
+//     return NextResponse.redirect(new URL("/Login", request.url));
+//   }
+
+//   return NextResponse.next();
+// }
+
+// export const config = {
+//   matcher: ["/Login", "/SignUp"]
+// };

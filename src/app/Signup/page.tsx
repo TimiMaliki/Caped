@@ -8,8 +8,34 @@ import Apple from "../../assets/authLayout-image/Apple-logo.png";
 import Logo from "../../assets/authLayout-image/Logo.png";
 import photo from "../../assets/authLayout-image/Photo.png";
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import {account , IDGenerator } from "../../lib/Utils/appwrite"
 
 export default function SignUpPage() {
+    const router = useRouter();
+      const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+  
+    const authSignUp = async () => {
+      try {
+        setLoading(true);
+  
+        await account.create(IDGenerator.unique(), email, password, name);
+  
+        router.push("/"); // redirect after login
+   console.log(email , password , name)
+      } 
+    
+      catch (error) {
+        console.error("Signup error:", error);
+        alert("Failed to create account");
+      } finally {
+        setLoading(false);
+      }
+    };
   return (
     <div className="relative min-h-screen w-full">
       {/* ================= BACKGROUND IMAGE ================= */}
@@ -43,22 +69,28 @@ export default function SignUpPage() {
             <Input
               type="text"
               placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="h-15 rounded-lg border-black/40"
             />
 
             <Input
               type="email"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="h-15 rounded-lg border-black/40"
             />
 
             <Input
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="h-15 rounded-lg border-black/40"
             />
 
-            <Button className="h-15 rounded-lg bg-black text-white hover:bg-black/90">
+            <Button className="h-15 rounded-lg bg-black text-white hover:bg-black/90 cursor-pointer" onClick={authSignUp} disabled={loading}>
               Create account
             </Button>
           </div>
