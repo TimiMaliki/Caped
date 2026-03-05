@@ -11,6 +11,7 @@ const page = ({ linkData, ellipse, group, style }: Props) => {
   return (
    <main>
    <Home/>
+
    </main>
   )
 }

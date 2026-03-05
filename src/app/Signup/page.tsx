@@ -12,6 +12,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import {account , IDGenerator } from "../../lib/Utils/appwrite"
 
+
 export default function SignUpPage() {
     const router = useRouter();
       const [name, setName] = useState("");
@@ -79,6 +80,7 @@ export default function SignUpPage() {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+               disabled={loading}
               className="h-15 rounded-lg border-black/40"
             />
 
@@ -87,11 +89,19 @@ export default function SignUpPage() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+               disabled={loading}
               className="h-15 rounded-lg border-black/40"
             />
 
             <Button className="h-15 rounded-lg bg-black text-white hover:bg-black/90 cursor-pointer" onClick={authSignUp} disabled={loading}>
-              Create account
+            {loading ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Creating Account...
+                </>
+              ) : (
+                "Create Account"
+              )}
             </Button>
           </div>
 

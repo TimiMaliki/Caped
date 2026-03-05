@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { account } from "../../lib/Utils/appwrite";
 import { Models } from "appwrite";
+import { Loader2 } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -23,6 +24,7 @@ export default function LoginPage() {
   useEffect(() => {
     const checkUser = async () => {
       setUser(await account.get());
+      
     };
     checkUser();
   }, []);
@@ -40,6 +42,15 @@ export default function LoginPage() {
       alert("Invalid email or password");
     } finally {
       setLoading(false);
+    }
+
+
+    if(user){
+     return(
+      <div className="min-h-screen w-full flex items-center justify-center">
+                          User already Looged
+        </div>
+     )
     }
   };
   return (
@@ -71,6 +82,7 @@ export default function LoginPage() {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+                disabled={loading}
               className="h-15 rounded-lg border-black/40"
             />
 
@@ -79,6 +91,7 @@ export default function LoginPage() {
               placeholder="Password"
               className="h-15 rounded-lg border-black/40"
               value={password}
+                disabled={loading}
               onChange={(e) => setPassword(e.target.value)}
             />
 
@@ -98,7 +111,14 @@ export default function LoginPage() {
               onClick={authLogin}
               disabled={loading}
             >
-              {loading ? "Logging in..." : "Log In"}
+              {loading ? (
+    <>
+      <Loader2 className="h-4 w-4 animate-spin" />
+      Logging in...
+    </>
+  ) : (
+    "Log In"
+  )}
             </Button>
 
             <div className="flex justify-end items-center gap-1 text-xs">
